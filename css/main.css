@@ -452,12 +452,15 @@ body {
     background: #e7f3ff;
     padding: 8px;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     text-align: center;
     font-family: 'Courier New', monospace;
     color: #0066cc;
-    min-height: 15px;
+    min-height: 32px;
     font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Result Message */
@@ -467,8 +470,11 @@ body {
     border-radius: 8px;
     font-size: 0.95rem;
     font-weight: 600;
-    min-height: 15px;
+    min-height: 38px;
     animation: fadeIn 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .result-message.success {
