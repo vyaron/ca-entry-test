@@ -9,19 +9,25 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
-    padding: 20px;
+    height: 100vh;
+    padding: 10px;
     color: #333;
+    overflow: hidden;
 }
 
 /* Container */
 .container {
     background: white;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     max-width: 1000px;
+    height: calc(100vh - 20px);
     margin: 0 auto;
-    padding: 30px;
+    padding: 15px;
     animation: slideIn 0.5s ease-out;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes slideIn {
@@ -38,39 +44,40 @@ body {
 /* Header */
 .header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .header h1 {
-    font-size: 2.8rem;
+    font-size: 1.8rem;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .subtitle {
     color: #666;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
 }
 
 /* Challenge Selector */
 .challenge-selector {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 6px;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 12px;
 }
 
 .challenge-btn {
-    padding: 10px 20px;
+    padding: 6px 12px;
     border: 2px solid #667eea;
     background: white;
     color: #667eea;
-    border-radius: 25px;
+    border-radius: 20px;
     font-weight: 600;
+    font-size: 0.85rem;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -90,22 +97,23 @@ body {
 /* Challenge Description */
 .challenge-description {
     background: #f7f9fc;
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 30px;
-    border-left: 4px solid #667eea;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border-left: 3px solid #667eea;
 }
 
 .challenge-description h2 {
     color: #667eea;
-    margin-bottom: 10px;
-    font-size: 1.5rem;
+    margin-bottom: 6px;
+    font-size: 1.1rem;
 }
 
 .challenge-description p {
     color: #555;
-    line-height: 1.6;
-    margin-bottom: 8px;
+    line-height: 1.4;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
 }
 
 .challenge-description ul {
@@ -117,17 +125,17 @@ body {
 .boxes-container {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-bottom: 30px;
+    gap: 20px;
+    margin-bottom: 12px;
 }
 
 .box {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 20px;
-    padding: 30px;
-    min-width: 150px;
+    border-radius: 15px;
+    padding: 15px 25px;
+    min-width: 100px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
     transition: all 0.3s ease;
 }
 
@@ -147,19 +155,19 @@ body {
 
 .box-label {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
 }
 
 .box-value {
     color: white;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
     font-family: 'Courier New', monospace;
-    min-height: 60px;
+    min-height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -185,48 +193,50 @@ body {
 /* Output Container */
 .output-container {
     background: #e7f3ff;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    border-left: 4px solid #4CAF50;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 3px solid #4CAF50;
 }
 
 .output-label {
     font-weight: 600;
     color: #4CAF50;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
 }
 
 .output-content {
     font-family: 'Courier New', monospace;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.4;
 }
 
 /* Input Container */
 .input-container {
     background: #fff3cd;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
     display: flex;
-    gap: 10px;
+    gap: 8px;
     align-items: center;
-    border-left: 4px solid #ffc107;
+    border-left: 3px solid #ffc107;
 }
 
 .input-container label {
     font-weight: 600;
     color: #856404;
+    font-size: 0.85rem;
 }
 
 .input-container input {
     flex: 1;
-    padding: 10px;
+    padding: 6px;
     border: 2px solid #ffc107;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
 }
 
 .input-container input:focus {
@@ -237,30 +247,30 @@ body {
 /* Commands Reference */
 .commands-reference {
     background: #f7f9fc;
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 30px;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
 }
 
 .commands-reference h3 {
     color: #667eea;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-size: 1rem;
 }
 
 .commands-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 6px;
 }
 
 .command-item {
     background: white;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 8px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     border: 1px solid #e0e0e0;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -275,16 +285,16 @@ body {
 .command-item code {
     background: #667eea;
     color: white;
-    padding: 4px 8px;
-    border-radius: 5px;
+    padding: 3px 6px;
+    border-radius: 4px;
     font-weight: bold;
-    font-size: 0.85rem;
-    min-width: 50px;
+    font-size: 0.75rem;
+    min-width: 40px;
     text-align: center;
 }
 
 .command-item span {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: #666;
 }
 
@@ -299,26 +309,26 @@ body {
 /* Program Container */
 .program-container {
     background: #f7f9fc;
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
 }
 
 .program-container h3 {
     color: #667eea;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-size: 1rem;
 }
 
 .program-lines {
-    margin-bottom: 15px;
+    margin-bottom: 0;
 }
 
 .program-line {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 8px;
+    margin-bottom: 6px;
     animation: fadeIn 0.3s ease;
 }
 
@@ -343,16 +353,17 @@ body {
 .line-number {
     color: #667eea;
     font-weight: bold;
-    min-width: 30px;
+    min-width: 24px;
+    font-size: 0.9rem;
 }
 
 .line-input {
     flex: 1;
-    padding: 10px;
+    padding: 8px;
     border: 2px solid #ddd;
-    border-radius: 8px;
+    border-radius: 6px;
     font-family: 'Courier New', monospace;
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     transition: all 0.3s ease;
 }
@@ -380,15 +391,15 @@ body {
 
 /* Buttons */
 .btn {
-    padding: 12px 24px;
+    padding: 8px 16px;
     border: none;
-    border-radius: 10px;
-    font-size: 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .btn:hover {
@@ -418,32 +429,33 @@ body {
 /* Execution Controls */
 .execution-controls {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 /* Execution Status */
 .execution-status {
     background: #e7f3ff;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 10px;
     text-align: center;
     font-family: 'Courier New', monospace;
     color: #0066cc;
-    min-height: 20px;
+    min-height: 15px;
+    font-size: 0.85rem;
 }
 
 /* Result Message */
 .result-message {
     text-align: center;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.95rem;
     font-weight: 600;
-    min-height: 20px;
+    min-height: 15px;
     animation: fadeIn 0.3s ease;
 }
 
@@ -467,78 +479,53 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        padding: 5px;
+    }
+
     .container {
-        padding: 20px;
+        padding: 10px;
+        height: calc(100vh - 10px);
+        border-radius: 10px;
     }
 
     .header h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.8rem;
     }
 
     .boxes-container {
-        gap: 20px;
-    }
-
-    .box {
-        min-width: 120px;
-        padding: 20px;
-    }
-
-    .box-value {
-        font-size: 2.5rem;
-    }
-
-    .commands-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    }
-
-    .challenge-selector {
-        gap: 8px;
-    }
-
-    .challenge-btn {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-
-    .execution-controls {
-        flex-direction: column;
-    }
-
-    .execution-controls .btn {
-        width: 100%;
-    }
-}
-
-@media (max-width: 500px) {
-    .header h1 {
-        font-size: 1.6rem;
-    }
-
-    .boxes-container {
-        flex-direction: column;
         gap: 15px;
     }
 
     .box {
-        min-width: 100%;
+        min-width: 80px;
+        padding: 12px 20px;
+    }
+
+    .box-value {
+        font-size: 1.8rem;
     }
 
     .commands-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
 
-    .program-controls {
-        flex-direction: column;
+    .challenge-selector {
+        gap: 4px;
     }
 
-    .program-controls .btn {
-        width: 100%;
+    .challenge-btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
     }
 
-    .input-container {
-        flex-direction: column;
-        align-items: stretch;
+    .execution-controls .btn {
+        font-size: 0.75rem;
+        padding: 6px 12px;
     }
 }
 
