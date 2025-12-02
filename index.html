@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustLingo - Coding Academy Challenge</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎯 JustLingo</h1>
+            <p class="subtitle">Learn the Lingo Programming Language</p>
+        </header>
+
+        <div class="challenge-selector">
+            <button class="challenge-btn active" data-challenge="0">Tutorial</button>
+            <button class="challenge-btn" data-challenge="1">Challenge 1</button>
+            <button class="challenge-btn" data-challenge="2">Challenge 2</button>
+            <button class="challenge-btn" data-challenge="3">Challenge 3</button>
+            <button class="challenge-btn" data-challenge="4">Challenge 4</button>
+            <button class="challenge-btn" data-challenge="5">Challenge 5</button>
+        </div>
+
+        <div class="challenge-description" id="challengeDescription">
+            <h2>Welcome to Lingo!</h2>
+            <p>Lingo is a simple programming language with boxes that contain values.</p>
+        </div>
+
+        <div class="boxes-container">
+            <div class="box box-a">
+                <div class="box-label">Box A</div>
+                <div class="box-value" id="boxA">0</div>
+            </div>
+            <div class="box box-b">
+                <div class="box-label">Box B</div>
+                <div class="box-value" id="boxB">0</div>
+            </div>
+        </div>
+
+        <div class="output-container" id="outputContainer" style="display: none;">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outputContent"></div>
+        </div>
+
+        <div class="input-container" id="inputContainer" style="display: none;">
+            <label for="userInput">Input Required:</label>
+            <input type="number" id="userInput" placeholder="Enter a number">
+            <button id="submitInput" class="btn btn-small">Submit</button>
+        </div>
+
+        <div class="commands-reference">
+            <h3>Available Commands:</h3>
+            <div class="commands-grid">
+                <div class="command-item">
+                    <code>AB</code>
+                    <span>Move A to B</span>
+                </div>
+                <div class="command-item">
+                    <code>BA</code>
+                    <span>Move B to A</span>
+                </div>
+                <div class="command-item">
+                    <code>IB</code>
+                    <span>Add 1 to B</span>
+                </div>
+                <div class="command-item">
+                    <code>DB</code>
+                    <span>Subtract 1 from B</span>
+                </div>
+                <div class="command-item">
+                    <code>MA</code>
+                    <span>Multiply A by 3</span>
+                </div>
+                <div class="command-item advanced-command">
+                    <code>RB</code>
+                    <span>Read input to B</span>
+                </div>
+                <div class="command-item advanced-command">
+                    <code>PB</code>
+                    <span>Print B</span>
+                </div>
+                <div class="command-item advanced-command">
+                    <code>SAB</code>
+                    <span>Add B to A</span>
+                </div>
+                <div class="command-item advanced-command">
+                    <code>FBJn</code>
+                    <span>If B≠0, jump to line n</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="program-container">
+            <h3>Your Program:</h3>
+            <div class="program-lines" id="programLines">
+                <div class="program-line">
+                    <span class="line-number">1.</span>
+                    <input type="text" class="line-input" placeholder="Enter command" data-line="1">
+                </div>
+            </div>
+        </div>
+
+        <div class="execution-controls">
+            <button id="runBtn" class="btn btn-primary">▶ Run Program</button>
+            <button id="stepBtn" class="btn btn-secondary">⏯ Step</button>
+            <button id="resetBtn" class="btn btn-secondary">↻ Reset</button>
+            <button id="clearBtn" class="btn btn-secondary">✕ Clear</button>
+        </div>
+
+        <div class="execution-status" id="executionStatus"></div>
+
+        <div class="result-message" id="resultMessage"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+Implement a nice game that will serve as an entry challenge for CodingAcademy candidates based on this file.
+The result should be playfull, responsive to mobile / desktop
+Keep it simple - Coding should be simple vanila javascript, vanila CSS, no building steps, etc.
+
+Commads are:
+•	AB – Move the content of A to B
+•	BA – Move the content of B to A
+•	IB – Add 1 to the current value of B
+•	DB – Add -1 to the current value of B
+•	MA – Multiply A by 3
+
+And for challenges 4, 5 add:
+•	RB – Reads an input into B
+•	FBJ4 – If B is not 0 - Jump to line 4 in the program 
+(4 is just an example here, FBJ8 will jump to line 8)
+•	PB - print B
+•	SAB – Adds the value of B into A
+
+
+Allow the user to click a command to add it to the program
+Program has max 4 lines, no need for add-line, remove-line buttons
+Make the UI condensed, so entire UI is visible (mobile/desktop) with no scrolling
