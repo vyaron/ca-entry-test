@@ -8,7 +8,7 @@ class LingoInterpreter {
         this.program = [];
         this.isWaitingForInput = false;
         this.inputCallback = null;
-        this.executionDelay = 500;
+        this.executionDelay = 800;
         this.isRunning = false;
     }
 
