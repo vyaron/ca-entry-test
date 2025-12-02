@@ -238,9 +238,32 @@ class GameUI {
         this.currentChallenge = 0;
         this.stepMode = false;
         this.inputQueue = [];
+        this.initSounds();
         this.initElements();
         this.bindEvents();
         this.loadChallenge(0);
+    }
+
+    initSounds() {
+        this.sounds = {
+            btn: new Audio('sounds/btn.mp3'),
+            right: new Audio('sounds/right.mp3'),
+            wrong: new Audio('sounds/wrong.mp3')
+        };
+        // Preload sounds
+        Object.values(this.sounds).forEach(sound => {
+            sound.load();
+        });
+    }
+
+    playSound(soundName) {
+        if (this.sounds[soundName]) {
+            this.sounds[soundName].currentTime = 0;
+            this.sounds[soundName].play().catch(e => {
+                // Ignore autoplay errors
+                console.log('Sound play prevented:', e);
+            });
+        }
     }
 
     initElements() {
@@ -260,6 +283,7 @@ class GameUI {
         // Challenge selector
         document.querySelectorAll('.challenge-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
+                this.playSound('btn');
                 const challengeNum = parseInt(e.target.dataset.challenge);
                 this.loadChallenge(challengeNum);
             });
@@ -270,6 +294,7 @@ class GameUI {
             const commandItem = e.target.closest('.command-item');
             if (commandItem && !commandItem.classList.contains('advanced-command') || 
                 (commandItem && commandItem.classList.contains('advanced-command') && commandItem.classList.contains('show'))) {
+                this.playSound('btn');
                 const code = commandItem.querySelector('code').textContent;
                 this.insertCommand(code);
             }
@@ -286,10 +311,22 @@ class GameUI {
         });
 
         // Execution controls
-        document.getElementById('runBtn').addEventListener('click', () => this.runProgram());
-        document.getElementById('stepBtn').addEventListener('click', () => this.stepProgram());
-        document.getElementById('resetBtn').addEventListener('click', () => this.resetProgram());
-        document.getElementById('clearBtn').addEventListener('click', () => this.clearProgram());
+        document.getElementById('runBtn').addEventListener('click', () => {
+            this.playSound('btn');
+            this.runProgram();
+        });
+        document.getElementById('stepBtn').addEventListener('click', () => {
+            this.playSound('btn');
+            this.stepProgram();
+        });
+        document.getElementById('resetBtn').addEventListener('click', () => {
+            this.playSound('btn');
+            this.resetProgram();
+        });
+        document.getElementById('clearBtn').addEventListener('click', () => {
+            this.playSound('btn');
+            this.clearProgram();
+        });
 
         // Input submission
         document.getElementById('submitInput').addEventListener('click', () => this.submitInput());
@@ -633,23 +670,29 @@ class GameUI {
             // For countdown challenge, we can't fully validate without knowing input
             // Just check if output exists
             if (this.interpreter.output.length > 0) {
+                this.playSound('right');
                 this.showMessage('✅ Program executed! Check if output is correct for your input.', 'success');
             } else {
+                this.playSound('wrong');
                 this.showMessage('❌ No output produced. Did you print the numbers?', 'error');
             }
         } else if (goal.type === 'custom' && goal.check === 'sumToZero') {
             // For sum to zero, check if A is 0
             if (this.interpreter.boxA === 0) {
+                this.playSound('right');
                 this.showMessage('✅ Correct! A is 0 after summing the inputs.', 'success');
             } else {
+                this.playSound('wrong');
                 this.showMessage('❌ A should be 0 after summing inputs until zero.', 'error');
             }
         } else {
             // Standard goal check
             const box = goal.box === 'A' ? this.interpreter.boxA : this.interpreter.boxB;
             if (box === goal.value) {
+                this.playSound('right');
                 this.showMessage(`✅ Correct! Box ${goal.box} = ${goal.value}`, 'success');
             } else {
+                this.playSound('wrong');
                 this.showMessage(`❌ Not quite. Box ${goal.box} is ${box}, should be ${goal.value}`, 'error');
             }
         }
