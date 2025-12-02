@@ -20,3 +20,6 @@ And for challenges 4, 5 add:
 Allow the user to click a command to add it to the program
 Program has max 4 lines, no need for add-line, remove-line buttons
 Make the UI condensed, so entire UI is visible (mobile/desktop) with no scrolling
+
+To make the UI more condensed, Lets make the Challenges buttons a single line by having just the challenge number in the button
+(leave the tutotial button)
